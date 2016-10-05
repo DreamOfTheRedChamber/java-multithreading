@@ -1,4 +1,4 @@
-package waitAndNotify;
+package conditionVariable;
 
 import java.util.ArrayList;
 import java.util.List;

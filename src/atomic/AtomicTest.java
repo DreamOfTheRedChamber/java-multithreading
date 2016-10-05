@@ -1,4 +1,4 @@
-package multithreading;
+package atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

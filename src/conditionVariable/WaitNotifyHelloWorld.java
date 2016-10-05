@@ -1,4 +1,4 @@
-package waitAndNotify;
+package conditionVariable;
 
 class Processor {
 	

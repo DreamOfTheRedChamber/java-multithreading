@@ -1,14 +1,14 @@
-package multithreading;
+package conditionVariable;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 
+ * This example demonstrates how to use wait() and notify() to realize the semantics of join() function
  */
 
-public class ConditionalVariableExample2
+public class ConditionVariableWithReentrantLock
 {
 	private static final long SLEEP_INTERVALS_MS = 1000;
 	private boolean running = true;
@@ -68,7 +68,7 @@ public class ConditionalVariableExample2
 	
 	public static void main( String[] args ) throws InterruptedException
 	{
-		ConditionalVariableExample2 cve = new ConditionalVariableExample2( );
+		ConditionVariableWithReentrantLock cve = new ConditionVariableWithReentrantLock( );
 		cve.start( );
 		cve.join( );
 	}

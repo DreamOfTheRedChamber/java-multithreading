@@ -1,10 +1,11 @@
-package multithreading;
+package conditionVariable;
 
 /**
  * 
+ * This example demonstrates how to use wait() and notify() to realize the semantics of join() function
  */
 
-public class ConditionVariableExample
+public class ConditionVariableWithSynchronizedKeyWord
 {
 	private static final long SLEEP_INTERVAL_MS = 1000;
 	private boolean running = true;
@@ -22,10 +23,14 @@ public class ConditionVariableExample
 			{
 				Thread.currentThread( ).interrupt( );
 			}
+						
 			synchronized ( thread )
 			{
 				running = false;
-				ConditionVariableExample.this.notify();
+				
+				// notify main thread
+				// note: here could not this because this is inside an anonymous function
+				ConditionVariableWithSynchronizedKeyWord.this.notify();
 			}
 		} );
 		
@@ -39,7 +44,7 @@ public class ConditionVariableExample
 			while ( running )
 			{
 				print( "Waiting for the peer thread to finish." );
-				wait();
+				wait(); // add thread to waiting queue of ConditionVariableExample object
 			}
 			print("Peer thread finished");
 		}
@@ -52,7 +57,7 @@ public class ConditionVariableExample
 	
 	public static void main( String[] args ) throws InterruptedException
 	{
-		ConditionVariableExample cve = new ConditionVariableExample( );
+		ConditionVariableWithSynchronizedKeyWord cve = new ConditionVariableWithSynchronizedKeyWord( );
 		cve.start( );
 		cve.join( );
 	}
