@@ -6,6 +6,7 @@ This repository contains code snippets for common Java concurrency techniques an
 * Semaphore/Mutex - locks, synchronized keyword
 * Condition variables - wait, notify, condition
 * Concurrency collections - CountDownLatch, ConcurrentHashMap, CopyOnWriteArrayList
+
 #### Common threadsafe implementations
 * Counters
 * Singleton
