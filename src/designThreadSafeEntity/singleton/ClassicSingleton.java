@@ -5,21 +5,21 @@ package designThreadSafeEntity.singleton;
  * Not threadsafe
  */
 
-public class ClassicSafeSingleton
+public class ClassicSingleton
 {
 	// define an instance field
-	private static ClassicSafeSingleton instance;
+	private static ClassicSingleton instance;
 
 	// make constructure private
-	private ClassicSafeSingleton(){}
+	private ClassicSingleton(){}
 	
 	// use static method to return instance
-	public static ClassicSafeSingleton getInstance()
+	public static ClassicSingleton getInstance()
 	{
 		// lazy initialization
 		if ( instance == null )
 		{
-			instance = new ClassicSafeSingleton();
+			instance = new ClassicSingleton();
 		}
 		return instance;
 	}
