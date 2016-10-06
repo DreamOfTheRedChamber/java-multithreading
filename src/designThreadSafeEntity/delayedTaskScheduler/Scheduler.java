@@ -1,4 +1,4 @@
-package designThreadSafeEntity;
+package designThreadSafeEntity.delayedTaskScheduler;
 
 import java.util.PriorityQueue;
 import java.util.concurrent.atomic.AtomicInteger;
